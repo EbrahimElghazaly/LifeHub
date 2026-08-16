@@ -1,2 +1,6 @@
 <Solution>
+  <Project Path="LifeHub.API/LifeHub.API.csproj" />
+  <Project Path="LifeHub.Core/LifeHub.Core.csproj" />
+  <Project Path="LifeHub.Infrastructure/LifeHub.Infrastructure.csproj" />
+  <Project Path="LifeHub.Shared/LifeHub.Shared.csproj" />
 </Solution>
