@@ -1484,7 +1484,9 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "LifeHub.Core": "1.0.0",
-          "LifeHub.Shared": "1.0.0"
+          "LifeHub.Shared": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.11"
         },
         "compile": {
           "bin/placeholder/LifeHub.Infrastructure.dll": {}
