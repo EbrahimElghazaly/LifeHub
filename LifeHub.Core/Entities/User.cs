@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
-
+using System;
+using System.Collections.Generic;
 namespace LifeHub.Core.Entities
 {
     public class User : IdentityUser

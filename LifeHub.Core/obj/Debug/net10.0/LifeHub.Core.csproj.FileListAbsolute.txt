@@ -1,0 +1,13 @@
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\LifeHub.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\LifeHub.Core.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\LifeHub.Core.AssemblyInfo.cs
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\LifeHub.Core.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\LifeHub.Core.sourcelink.json
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\LifeHub.Core.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\bin\Debug\net10.0\LifeHub.Core.deps.json
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\bin\Debug\net10.0\LifeHub.Core.dll
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\bin\Debug\net10.0\LifeHub.Core.pdb
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\LifeHub.Core.dll
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\refint\LifeHub.Core.dll
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\LifeHub.Core.pdb
+C:\Users\admin\Desktop\LifeHub\LifeHub.Core\obj\Debug\net10.0\ref\LifeHub.Core.dll

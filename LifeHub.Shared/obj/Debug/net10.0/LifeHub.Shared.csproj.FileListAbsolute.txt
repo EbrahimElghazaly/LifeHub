@@ -1,0 +1,12 @@
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\bin\Debug\net10.0\LifeHub.Shared.deps.json
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\bin\Debug\net10.0\LifeHub.Shared.dll
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\bin\Debug\net10.0\LifeHub.Shared.pdb
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\LifeHub.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\LifeHub.Shared.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\LifeHub.Shared.AssemblyInfo.cs
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\LifeHub.Shared.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\LifeHub.Shared.sourcelink.json
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\LifeHub.Shared.dll
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\refint\LifeHub.Shared.dll
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\LifeHub.Shared.pdb
+C:\Users\admin\Desktop\LifeHub\LifeHub.Shared\obj\Debug\net10.0\ref\LifeHub.Shared.dll

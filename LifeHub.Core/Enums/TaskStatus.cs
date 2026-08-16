@@ -1,6 +1,6 @@
 namespace LifeHub.Core.Enums
 {
-    public enum TaskStatus
+    public enum TaskStatusEnum
     {
         Pending = 0,
         InProgress = 1,

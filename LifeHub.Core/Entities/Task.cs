@@ -9,8 +9,7 @@ namespace LifeHub.Core.Entities
         public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string? Description { get; set; }
-        public TaskStatus Status { get; set; } = TaskStatus.Pending;
-        public TaskPriority Priority { get; set; } = TaskPriority.Medium;
+public TaskStatusEnum Status { get; set; } = TaskStatusEnum.Pending;        public TaskPriority Priority { get; set; } = TaskPriority.Medium;
         public DateTime? DueDate { get; set; }
         public DateTime? ReminderDate { get; set; }
         public int? EstimatedMinutes { get; set; }
