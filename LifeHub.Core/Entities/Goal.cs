@@ -16,11 +16,9 @@ namespace LifeHub.Core.Entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? CompletedAt { get; set; }
         
-        // Foreign Keys
         public string UserId { get; set; } = string.Empty;
         
-        // Navigation
-        public virtual User User { get; set; } = null!;
+        public virtual AppUser User { get; set; } = null!;
         public virtual ICollection<GoalMilestone>? Milestones { get; set; }
     }
 }

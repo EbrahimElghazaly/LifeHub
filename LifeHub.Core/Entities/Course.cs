@@ -13,12 +13,10 @@ namespace LifeHub.Core.Entities
         public int CompletedHours { get; set; } = 0;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         
-        // Foreign Keys
         public string UserId { get; set; } = string.Empty;
         public Guid? LearningPathId { get; set; }
         
-        // Navigation
-        public virtual User User { get; set; } = null!;
+        public virtual AppUser User { get; set; } = null!;
         public virtual LearningPath? LearningPath { get; set; }
         public virtual ICollection<StudySession>? StudySessions { get; set; }
     }

@@ -11,7 +11,9 @@ namespace LifeHub.Core.Entities
         public bool IsPinned { get; set; } = false;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
+        
         public string UserId { get; set; } = string.Empty;
-        public virtual User User { get; set; } = null!;
+        
+        public virtual AppUser User { get; set; } = null!;
     }
 }

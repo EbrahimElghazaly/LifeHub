@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LifeHub.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260816213043_InitialCreate")]
+    [Migration("20260817102810_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -19,6 +19,88 @@ namespace LifeHub.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.11");
+
+            modelBuilder.Entity("LifeHub.Core.Entities.AppUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("AvatarUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsDarkMode")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("LastActiveAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PreferredLanguage")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
 
             modelBuilder.Entity("LifeHub.Core.Entities.AzkarItem", b =>
                 {
@@ -562,88 +644,6 @@ namespace LifeHub.Infrastructure.Migrations
                     b.ToTable("TaskReminders");
                 });
 
-            modelBuilder.Entity("LifeHub.Core.Entities.User", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("AvatarUrl")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("FullName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("IsDarkMode")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime?>("LastActiveAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("PreferredLanguage")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers", (string)null);
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -774,7 +774,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.AzkarLog", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany("AzkarLogs")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -790,7 +790,7 @@ namespace LifeHub.Infrastructure.Migrations
                         .HasForeignKey("LearningPathId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -803,7 +803,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.Goal", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany("Goals")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -825,7 +825,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.Habit", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany("Habits")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -847,7 +847,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.JournalEntry", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany("JournalEntries")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -858,7 +858,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.LearningPath", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -869,7 +869,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.Note", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany("Notes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -880,7 +880,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.QuranProgress", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany("QuranProgress")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -896,7 +896,7 @@ namespace LifeHub.Infrastructure.Migrations
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany("StudySessions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -919,7 +919,7 @@ namespace LifeHub.Infrastructure.Migrations
                         .HasForeignKey("ParentTaskId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany("Tasks")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -934,7 +934,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.TaskCategory", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", "User")
+                    b.HasOne("LifeHub.Core.Entities.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -965,7 +965,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", null)
+                    b.HasOne("LifeHub.Core.Entities.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -974,7 +974,7 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", null)
+                    b.HasOne("LifeHub.Core.Entities.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -989,7 +989,7 @@ namespace LifeHub.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LifeHub.Core.Entities.User", null)
+                    b.HasOne("LifeHub.Core.Entities.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -998,11 +998,30 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("LifeHub.Core.Entities.User", null)
+                    b.HasOne("LifeHub.Core.Entities.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("LifeHub.Core.Entities.AppUser", b =>
+                {
+                    b.Navigation("AzkarLogs");
+
+                    b.Navigation("Goals");
+
+                    b.Navigation("Habits");
+
+                    b.Navigation("JournalEntries");
+
+                    b.Navigation("Notes");
+
+                    b.Navigation("QuranProgress");
+
+                    b.Navigation("StudySessions");
+
+                    b.Navigation("Tasks");
                 });
 
             modelBuilder.Entity("LifeHub.Core.Entities.Course", b =>
@@ -1034,25 +1053,6 @@ namespace LifeHub.Infrastructure.Migrations
 
             modelBuilder.Entity("LifeHub.Core.Entities.TaskCategory", b =>
                 {
-                    b.Navigation("Tasks");
-                });
-
-            modelBuilder.Entity("LifeHub.Core.Entities.User", b =>
-                {
-                    b.Navigation("AzkarLogs");
-
-                    b.Navigation("Goals");
-
-                    b.Navigation("Habits");
-
-                    b.Navigation("JournalEntries");
-
-                    b.Navigation("Notes");
-
-                    b.Navigation("QuranProgress");
-
-                    b.Navigation("StudySessions");
-
                     b.Navigation("Tasks");
                 });
 #pragma warning restore 612, 618

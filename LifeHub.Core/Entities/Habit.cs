@@ -17,11 +17,9 @@ namespace LifeHub.Core.Entities
         public bool IsActive { get; set; } = true;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         
-        // Foreign Keys
         public string UserId { get; set; } = string.Empty;
         
-        // Navigation
-        public virtual User User { get; set; } = null!;
+        public virtual AppUser User { get; set; } = null!;
         public virtual ICollection<HabitLog>? Logs { get; set; }
     }
 }

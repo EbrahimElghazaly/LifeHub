@@ -5,14 +5,13 @@ using TaskEntity = LifeHub.Core.Entities.Task;
 
 namespace LifeHub.Infrastructure.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<User>
+    public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
 
-        // DbSets
         public DbSet<TaskEntity> Tasks { get; set; }
         public DbSet<TaskCategory> TaskCategories { get; set; }
         public DbSet<TaskReminder> TaskReminders { get; set; }

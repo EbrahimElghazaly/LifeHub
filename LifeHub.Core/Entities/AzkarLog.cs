@@ -9,6 +9,7 @@ namespace LifeHub.Core.Entities
         public string AzkarName { get; set; } = string.Empty;
         public int Count { get; set; } = 1;
         public DateTime LogDate { get; set; } = DateTime.UtcNow;
-        public virtual User User { get; set; } = null!;
+        
+        public virtual AppUser User { get; set; } = null!;
     }
 }

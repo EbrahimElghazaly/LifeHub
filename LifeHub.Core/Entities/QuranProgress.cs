@@ -11,6 +11,7 @@ namespace LifeHub.Core.Entities
         public int TotalPagesRead { get; set; } = 0;
         public DateTime LastReadAt { get; set; } = DateTime.UtcNow;
         public DateTime StartedAt { get; set; } = DateTime.UtcNow;
-        public virtual User User { get; set; } = null!;
+        
+        public virtual AppUser User { get; set; } = null!;
     }
 }

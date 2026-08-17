@@ -11,7 +11,9 @@ namespace LifeHub.Core.Entities
         public DateTime EntryDate { get; set; } = DateTime.UtcNow;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
+        
         public string UserId { get; set; } = string.Empty;
-        public virtual User User { get; set; } = null!;
+        
+        public virtual AppUser User { get; set; } = null!;
     }
 }

@@ -14,12 +14,10 @@ namespace LifeHub.Core.Entities
         public string? Subject { get; set; }
         public string? Tags { get; set; }
         
-        // Foreign Keys
         public string UserId { get; set; } = string.Empty;
         public Guid? CourseId { get; set; }
         
-        // Navigation
-        public virtual User User { get; set; } = null!;
+        public virtual AppUser User { get; set; } = null!;
         public virtual Course? Course { get; set; }
     }
 }

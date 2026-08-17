@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+
 namespace LifeHub.Core.Entities
 {
-    public class User : IdentityUser
+    public class AppUser : IdentityUser
     {
         public string? FullName { get; set; }
         public string? AvatarUrl { get; set; }

@@ -10,11 +10,9 @@ namespace LifeHub.Core.Entities
         public string? Description { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         
-        // Foreign Keys
         public string UserId { get; set; } = string.Empty;
         
-        // Navigation
-        public virtual User User { get; set; } = null!;
+        public virtual AppUser User { get; set; } = null!;
         public virtual ICollection<Course>? Courses { get; set; }
     }
 }
