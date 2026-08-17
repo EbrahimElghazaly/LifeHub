@@ -1,21 +1,20 @@
 using System;
+using System.Collections.Generic;
 
 namespace LifeHub.Core.Entities
 {
-    public class Note
+    public class LearningPath
     {
         public Guid Id { get; set; }
-        public string Title { get; set; } = string.Empty;
-        public string Content { get; set; } = string.Empty;
-        public string? Tags { get; set; }
-        public bool IsPinned { get; set; } = false;
+        public string Name { get; set; } = string.Empty;
+        public string? Description { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; set; }
         
         // Foreign Keys
         public string UserId { get; set; } = string.Empty;
         
         // Navigation
         public virtual AppUser User { get; set; } = null!;
+        public virtual ICollection<Course>? Courses { get; set; }
     }
 }

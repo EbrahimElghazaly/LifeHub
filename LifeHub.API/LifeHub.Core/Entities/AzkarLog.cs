@@ -11,6 +11,6 @@ namespace LifeHub.Core.Entities
         public DateTime LogDate { get; set; } = DateTime.UtcNow;
         
         // Navigation
-        public virtual User User { get; set; } = null!;
+        public virtual AppUser User { get; set; } = null!;
     }
 }

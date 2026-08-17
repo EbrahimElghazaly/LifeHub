@@ -16,6 +16,6 @@ namespace LifeHub.Core.Entities
         public string UserId { get; set; } = string.Empty;
         
         // Navigation
-        public virtual User User { get; set; } = null!;
+        public virtual AppUser User { get; set; } = null!;
     }
 }

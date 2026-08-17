@@ -9,7 +9,7 @@ namespace LifeHub.Core.Entities
         public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string? Description { get; set; }
-        public TaskStatusEnum Status { get; set; } = TaskStatusEnum.Pending;  // تغيير الاسم
+        public TaskStatusEnum Status { get; set; } = TaskStatusEnum.Pending;
         public TaskPriority Priority { get; set; } = TaskPriority.Medium;
         public DateTime? DueDate { get; set; }
         public DateTime? ReminderDate { get; set; }
@@ -25,7 +25,7 @@ namespace LifeHub.Core.Entities
         public Guid? ParentTaskId { get; set; }
         
         // Navigation Properties
-        public virtual User User { get; set; } = null!;
+        public virtual AppUser User { get; set; } = null!;
         public virtual TaskCategory? Category { get; set; }
         public virtual Task? ParentTask { get; set; }
         public virtual ICollection<Task>? Subtasks { get; set; }

@@ -1,10 +1,11 @@
+using LifeHub.Core.Entities;
+using LifeHub.API.DTOs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using LifeHub.Core.Entities;
 
 namespace LifeHub.API.Controllers
 {
@@ -12,13 +13,13 @@ namespace LifeHub.API.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
         private readonly IConfiguration _configuration;
 
         public AuthController(
-            UserManager<User> userManager,
-            SignInManager<User> signInManager,
+            UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager,
             IConfiguration configuration)
         {
             _userManager = userManager;
@@ -26,14 +27,13 @@ namespace LifeHub.API.Controllers
             _configuration = configuration;
         }
 
-        // Register
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var user = new User
+            var user = new AppUser
             {
                 UserName = model.Email,
                 Email = model.Email,
@@ -49,7 +49,6 @@ namespace LifeHub.API.Controllers
             return Ok(new { message = "User created successfully!" });
         }
 
-        // Login
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto model)
         {
@@ -81,14 +80,14 @@ namespace LifeHub.API.Controllers
             });
         }
 
-        private string GenerateJwtToken(User user)
+        private string GenerateJwtToken(AppUser user)
         {
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email ?? string.Empty),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.Name, user.FullName ?? user.Email ?? "")
+                new Claim(ClaimTypes.Name, user.FullName ?? user.Email ?? string.Empty)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
