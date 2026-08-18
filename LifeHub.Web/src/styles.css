@@ -1,0 +1,26 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+body {
+  background: #f8f6f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #1A2A3A;
+  border-color: #1A2A3A;
+}
+
+.btn-primary:hover {
+  background-color: #2C3E50;
+  border-color: #2C3E50;
+}
+
+.text-primary {
+  color: #1A2A3A !important;
+}

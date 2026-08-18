@@ -1,0 +1,47 @@
+<div class="container py-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h2">👋 مرحباً {{ user?.fullName }}</h1>
+    <button class="btn btn-outline-danger" (click)="logout()">
+      <i class="fas fa-sign-out-alt me-2"></i>تسجيل خروج
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h3 class="display-4 fw-bold text-primary">3</h3>
+          <p class="text-muted">📋 المهام اليومية</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h3 class="display-4 fw-bold text-success">2</h3>
+          <p class="text-muted">📚 ساعات الدراسة</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <h3 class="display-4 fw-bold text-info">1</h3>
+          <p class="text-muted">📖 جزء من القرآن</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">📊 تقدم اليوم</h5>
+      <div class="progress" style="height: 20px;">
+        <div class="progress-bar bg-primary" style="width: 65%;">65%</div>
+      </div>
+      <p class="text-muted mt-2 small">3 من 5 مهام منجزة</p>
+    </div>
+  </div>
+</div>

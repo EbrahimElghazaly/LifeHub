@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LifeHub.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+738482c19d62224cbd29cc9ba384759ce5ab442b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+273c8c26f84670e977b0acc608824ec2baae167f")]
 [assembly: System.Reflection.AssemblyProductAttribute("LifeHub.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LifeHub.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

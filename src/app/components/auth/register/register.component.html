@@ -1,0 +1,109 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-lg p-4" style="width: 100%; max-width: 420px;">
+    <div class="text-center mb-4">
+      <h1 class="h3 fw-bold text-primary">LifeHub</h1>
+      <p class="text-muted">✨ إنشاء حساب جديد</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <!-- الاسم الكامل -->
+      <div class="mb-3">
+        <label class="form-label">الاسم الكامل</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="model.fullName"
+          name="fullName"
+          required
+          placeholder="أدخل اسمك الكامل"
+          #fullName="ngModel"
+        />
+        <div *ngIf="fullName.invalid && fullName.touched" class="text-danger small">
+          الاسم الكامل مطلوب
+        </div>
+      </div>
+
+      <!-- البريد الإلكتروني -->
+      <div class="mb-3">
+        <label class="form-label">البريد الإلكتروني</label>
+        <input
+          type="email"
+          class="form-control"
+          [(ngModel)]="model.email"
+          name="email"
+          required
+          email
+          placeholder="example@email.com"
+          #email="ngModel"
+        />
+        <div *ngIf="email.invalid && email.touched" class="text-danger small">
+          <span *ngIf="email.errors?.['required']">البريد الإلكتروني مطلوب</span>
+          <span *ngIf="email.errors?.['email']">البريد الإلكتروني غير صحيح</span>
+        </div>
+      </div>
+
+      <!-- كلمة المرور -->
+      <div class="mb-3">
+        <label class="form-label">كلمة المرور</label>
+        <input
+          type="password"
+          class="form-control"
+          [(ngModel)]="model.password"
+          name="password"
+          required
+          minlength="6"
+          placeholder="••••••••"
+          #password="ngModel"
+        />
+        <div *ngIf="password.invalid && password.touched" class="text-danger small">
+          <span *ngIf="password.errors?.['required']">كلمة المرور مطلوبة</span>
+          <span *ngIf="password.errors?.['minlength']">كلمة المرور يجب أن تكون 6 أحرف على الأقل</span>
+        </div>
+      </div>
+
+      <!-- تأكيد كلمة المرور -->
+      <div class="mb-3">
+        <label class="form-label">تأكيد كلمة المرور</label>
+        <input
+          type="password"
+          class="form-control"
+          [(ngModel)]="model.confirmPassword"
+          name="confirmPassword"
+          required
+          placeholder="••••••••"
+          #confirmPassword="ngModel"
+        />
+        <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="text-danger small">
+          تأكيد كلمة المرور مطلوب
+        </div>
+        <div *ngIf="model.password !== model.confirmPassword && model.confirmPassword" class="text-danger small">
+          كلمة المرور غير متطابقة
+        </div>
+      </div>
+
+      <!-- زر التسجيل -->
+      <button
+        type="submit"
+        class="btn btn-primary w-100 py-2 mb-3"
+        [disabled]="loading || registerForm.invalid || model.password !== model.confirmPassword"
+      >
+        <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+        {{ loading ? 'جاري التحميل...' : 'إنشاء الحساب' }}
+      </button>
+
+      <!-- رسائل الخطأ والنجاح -->
+      <div *ngIf="error" class="alert alert-danger text-center small">
+        {{ error }}
+      </div>
+
+      <div *ngIf="success" class="alert alert-success text-center small">
+        {{ success }}
+      </div>
+
+      <!-- رابط تسجيل الدخول -->
+      <p class="text-center text-muted mb-0">
+        لديك حساب؟ <a routerLink="/login" class="text-primary fw-bold text-decoration-none">سجل دخول</a>
+      </p>
+    </form>
+  </div>
+</div>
